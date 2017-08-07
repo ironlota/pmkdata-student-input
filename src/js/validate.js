@@ -1,6 +1,6 @@
-/* const validate = require('validate.js');
+import validate from 'validate.js';
 
-module.export = (formDOM) => {
+export default (formDOM) => {
   // Before using it we must add the parse and format functions
   // Here is a sample implementation using moment.js
   validate.extend(validate.validators.datetime, {
@@ -186,5 +186,4 @@ module.export = (formDOM) => {
     // We made it \:D/
     alert('Success!');
   }
-};
- */
+}
