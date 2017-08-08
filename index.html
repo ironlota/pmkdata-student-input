@@ -84,6 +84,22 @@
         box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.12);
     }
 
+    #message {
+      width: 100%;
+      margin: 10px auto;
+      padding: 12px;
+    }
+
+    .success {
+      color: #4F8A10;
+      background-color: #DFF2BF;
+    }
+
+    .error {
+      color: #D8000C;
+      background-color: #FFBABA;
+    }
+
   </style>
 </head>
 
@@ -96,7 +112,7 @@
   </div>
   <div class="content">
 
-    <form class="form-center" name="studentForm">
+    <form class="form-center" name="studentForm" id="studentForm">
       <input name="year" type="hidden" value="2017">
 
       <div class="form-field">
@@ -160,8 +176,8 @@
       </div>
 
       <div class="form-field">
-        <label for="address">Alamat di Bandung</label>
-        <textarea name="address" required></textarea>
+        <label for="bandung_address">Alamat di Bandung</label>
+        <textarea name="bandung_address" required></textarea>
       </div>
 
       <div class="form-field">
@@ -183,6 +199,7 @@
       <input type="submit" value="Kirim">
 
     </form>
+    <div id="message"></div>
   </div>
 
   <script src="js/index.js" charset="utf-8"></script>
