@@ -2,7 +2,7 @@ function formToJson (form) {
   const formData = new FormData(form);
   let result = {};
   for (const [entry, value] of formData.entries()) result[entry] = value;
-  return JSON.stringify(result);
+  return result;
 }
 
 const message = document.getElementById('message');
@@ -25,5 +25,5 @@ studentForm.addEventListener('submit', function (event) {
       message.innerHTML = 'Error! <br /> Message: ' + students.message;
     }
   };
-  xhr.send(data);
+  xhr.send(JSON.stringify(data));
 });
