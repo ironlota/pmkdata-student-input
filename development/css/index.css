@@ -1,0 +1,89 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.header {
+    padding: 20px 5%;
+    background-color: #f2b922;
+    color: #ffffff;
+}
+
+.content {
+    margin: 48px 5%;
+}
+
+.form-center, .header-center {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.form-field {
+    margin: 16px 0;
+}
+
+input, select {
+    width: 100%;
+    font-size: 1.1em;
+}
+
+select option.default-option {
+    color: #aaa;
+}
+
+input[type=text], input[type=date], select, textarea {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 1px #aaa;
+}
+
+input[type=text]:focus, input[type=date]:focus, select:focus, textarea:focus {
+    border: solid 1px #f2b500;
+}
+
+input[type=submit] {
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #f2b922;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+input[type=submit]:active {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.12);
+}
+
+#message {
+  width: 100%;
+  margin: 10px auto;
+  padding: 12px;
+}
+
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
