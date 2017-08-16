@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <title>Selamat datang 2017!</title>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -108,7 +109,8 @@
     }
 
     #message {
-      width: 100%;
+      max-width: 500px;
+      border-radius: 3px;
       margin: 10px auto;
       padding: 12px;
     }
@@ -236,10 +238,13 @@
 	function isDateValid(dateStr) {
 	    var dates = dateStr.split('-');
 	    if (dates.length != 3) return false;
-	    var y = dates[0];
-	    var m = dates[1];
-	    var d = dates[2];
-	    return y >= 1990 && y <= 2089 && m >= 0 && m < 12 && d > 0 && d <= daysInMonth(m, y);
+	    var y = parseInt(dates[0], 10);
+	    var m = parseInt(dates[1], 10);
+	    var d = parseInt(dates[2], 10);
+	    return !isNaN(y) && !isNaN(m) && !isNaN(d)
+	    	&& y >= 1990 && y <= 2089
+	    	&& m >= 0 && m < 12
+	    	&& d > 0 && d <= daysInMonth(m, y);
 	}
 
 	function formToJson (form) {
