@@ -280,10 +280,10 @@
 		var students = JSON.parse(xhr.responseText);
 			if (xhr.readyState === 4 && xhr.status === 201) {
 				m.setAttribute('class', 'success');
-				m.innerHTML = 'Selamat datang, ' + escapeHTML(students.name) + '!';
+				m.innerHTML = 'Salam kenal, ' + escapeHTML(students.name) + '!';
 			} else {
 				m.setAttribute('class', 'error');
-				m.innerHTML = 'Data gagal disimpan :(<br />Keterangan: ' + students.message;
+				m.innerHTML = 'Data gagal disimpan :( Coba beberapa saat lagi...<br />Keterangan: ' + students.message;
 			}
 		};
 		xhr.send(JSON.stringify(data));

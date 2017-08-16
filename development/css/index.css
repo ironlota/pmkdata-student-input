@@ -22,7 +22,7 @@ body, html {
     margin: 48px 5%;
 }
 
-.form-center, .header-center {
+.form-center, .header-center, #message {
     margin: 0 auto;
     max-width: 500px;
 }
