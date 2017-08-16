@@ -274,6 +274,7 @@
 		m.innerHTML = '';
 		var data = formToJson(studentForm);
 		if (!isDateValid(data.birth_date)) {
+			m.setAttribute('class', 'error');
 			m.innerHTML = 'Tanggal lahir harus merupakan tanggal yang benar dalam format YYYY-MM-DD (tahun-bulan-tanggal)';
 			return false;
 		}
