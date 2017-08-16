@@ -134,7 +134,7 @@
   </div>
   <div class="content">
 
-    <form class="form-center" name="studentForm" id="studentForm">
+    <form class="form-center" name="studentForm" id="studentForm" action='/api/students' method='POST'>
       <input name="year" type="hidden" value="2017">
 
       <div class="form-field">
@@ -149,12 +149,10 @@
           <option value="STEI">STEI - Sekolah Teknik Elektro dan Informatika</option>
           <option value="FSRD">FSRD - Fakultas Seni Rupa dan Desain</option>
           <option value="FTSL">FTSL - Fakultas Teknik Sipil dan Lingkungan</option>
-          <option value="FTI-G">FTI-G - Fakultas Teknologi Industri (Ganesha)</option>
-          <option value="FTI-J">FTI-J - Fakultas Teknologi Industri (Jatinangor)</option>
+          <option value="FTI">FTI - Fakultas Teknologi Industri</option>
           <option value="SBM">SBM - Sekolah Bisnis dan Manajemen</option>
           <option value="SF">SF - Sekolah Farmasi</option>
-          <option value="SITH-S">SITH-S - Sekolah Ilmu dan Teknologi Hayati - Program Sains</option>
-          <option value="SITH-R">SITH-R - Sekolah Ilmu dan Teknologi Hayati - Program Rekayasa</option>
+          <option value="SITH">SITH - Sekolah Ilmu dan Teknologi Hayati</option>
           <option value="FMIPA">FMIPA - Fakultas Matematika dan Ilmu Pengetahuan Alam</option>
           <option value="SAPPK">SAPPK - Sekolah Arsitektur, Perencanaan dan Pengembangan Kebijakan</option>
           <option value="FTMD">FTMD - Fakultas Teknik Mesin dan Dirgantara</option>
@@ -178,8 +176,8 @@
       </div>
 
       <div class="form-field">
-        <label for="birth_date">Tanggal lahir (tanggal-bulan-tahun, cth. 30-01-1990)</label>
-        <input name="birth_date" type="date" placeholder="DD-MM-YYYY" required pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$">
+        <label for="birth_date">Tanggal lahir (tahun-bulan-tanggal, cth. 1990-01-30)</label>
+        <input name="birth_date" type="date" placeholder="YYYY-MM-DD" required pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$">
       </div>
 
       <div class="form-field">
@@ -223,13 +221,6 @@
     </form>
     <div id="message"></div>
   </div>
-  <noscript>
-    <style>
-      .content {display: none}
-      .error {text-align: center; color: red; background-color: #fafafa;}
-    </style>
-    <h2 class="error">Activate the javascript on your browser!</h2>
-  </noscript>
   <script type="text/javascript" charset="utf-8">
     function c(){for(var b=studentForm.elements,a={},d=0;d<b.length;d++){var e=b.item(d);a[e.name]=e.value}return a}var f=document.getElementById("message");document.getElementById("studentForm").addEventListener("submit",function(b){b.preventDefault();f.innerHTML="";b=c();var a=new XMLHttpRequest;a.open("POST","http://localhost:3000/api/students",!0);a.setRequestHeader("Content-type","application/json; charset=utf-8");a.onload=function(){var b=JSON.parse(a.responseText);4===a.readyState&&201===a.status?(f.setAttribute("class","success"),f.innerHTML="Success! <br />"+b.name.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/\'/g,"&#39;").replace(/\//g,"&#x2F;")+" has been registered!"):(f.setAttribute("class","error"),f.innerHTML="Error! <br /> Message: "+b.message)};a.send(JSON.stringify(b))});
   </script>
