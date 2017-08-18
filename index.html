@@ -260,10 +260,11 @@
 	function formToJson (form) {
 	  var formData = form.elements;
 	  var result = {};
-	  for(var i = 0 ; i < formData.length ; i++){
-	        var item = formData.item(i);
-	        result[item.name] = item.value;
-	    }
+	  for(var i = 0 ; i < formData.length ; i++) {
+      var item = formData.item(i);
+      result[item.name] = item.value;
+    }
+    if (!result.year) result.year = 2017;
 	  return result;
 	}
 
